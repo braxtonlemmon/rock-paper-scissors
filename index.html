@@ -6,7 +6,66 @@
 
 <body>
     <script>
-    
+      //Assign global variables
+      let computerPoints = 0;
+      let playerPoints = 0;
+      
+      //Uses a random number to assign the computer player either rock, paper, or scissors
+      function computerPlay() {
+          options = ['rock', 'paper', 'scissors'];
+          randNum = Math.floor(Math.random() * options.length);
+          return options[randNum];
+      }
+
+      //Plays one round of the game  
+      function playRound(playerSelection, computerSelection = computerPlay()) {
+          //Make playerSelection case insensitive
+          playerSelection = playerSelection.toLowerCase();
+
+          //Conditional to determine end result
+          if (playerSelection === computerSelection) {
+            return 'It\'s a tie!';
+          } else if (playerSelection === 'rock' && computerSelection === 'scissors' || 
+                    playerSelection === 'paper' && computerSelection === 'rock' || 
+                    playerSelection === 'scissors' && computerSelection === 'paper') {
+              playerPoints++;      
+              return 'You win, ' + playerSelection + ' beats ' + computerSelection;
+          } else if (playerSelection === 'scissors' && computerSelection === 'rock' || 
+                    playerSelection === 'rock' && computerSelection === 'paper' || 
+                    playerSelection === 'paper' && computerSelection === 'scissors') {
+              computerPoints++;
+              return 'You lose, ' + computerSelection + ' beats ' + playerSelection;
+          } else {
+              return 'Something went wrong. Refresh page and restart game.';
+          }
+      }
+      
+      //Completes a five-round game
+      function game() {
+          //for-loop to run five rounds of the game
+          for (let i = 1; i < 6; i++) {
+              let playerChoice = prompt('Type rock, paper, or scissors');
+              console.log(playRound(playerChoice));
+              console.log();
+              console.log(`Results after round ${i}`);
+              console.log(`Computer score: ${computerPoints}`);
+              console.log(`Your score: ${playerPoints}`);    
+          }
+          
+          //switch used to determine the overall game results.
+          switch(true) {
+              case (computerPoints === playerPoints):
+                console.log('It\'s a tie game!');
+                break;
+              case (computerPoints < playerPoints):
+                console.log('Congratulations! You win!');
+                break;
+              case (computerPoints > playerPoints): 
+                console.log('Sorry, the computer wins.');
+                break;
+          }
+      }
+      console.log(game());
     </script>
 </body>
 </html>
