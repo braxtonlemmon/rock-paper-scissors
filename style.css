@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #b1aa5d;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 20px;
+    color: #140505;
+}
+
+h3 {
+    text-align: center;
+    height: 50px;
+    font-size: 45px;
+    margin: 30px auto;
+}
+
+.scores {
+    max-width: 600px;
+    height: 100px;
+    margin: 20px auto;
+}
+
+#player-score, #computer-score {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.results {
+    max-width: 600px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.round-result, .game-result {
+    text-align: center;
+    margin: 10px auto;
+    max-width: 500px;
+}
+
+.round-result {
+    height: 40px;
+    font-size: 25px;
+}
+
+.game-result {
+    
+    font-size: 40px;
+    color: white;
+    margin-top: 80px;
+    height: 40px;
+}
+
+.buttons {
+    width: 400px;
+    height: 100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#rock, #paper, #scissors {
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    background-color: black;
+    color: white;
+    border-radius: 18px;
+    border: 2px solid #38ef22fc;
+    text-decoration: none;
+    outline: none;
+}
+
+.reset {
+    width: 260px;
+    margin: 0 auto;
+}
+
+#reset{
+    display: block;
+    margin: 0 auto;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    width: 80px;
+    height: 25px;
+    background-color: grey;
+    color: white;
+    border-radius: 18px;
+    border: 2px solid #38ef22fc;
+    text-decoration: none; 
+    outline: none;
+}
